@@ -35,6 +35,8 @@ General
    general/floormod.rst
    general/floor.rst
    general/abs.rst
+   general/argmax.rst
+   general/argmin.rst
    general/argmin.rst
    general/arange.rst
    general/linspace.rst
