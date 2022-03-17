@@ -19,4 +19,5 @@ Creation
    creation/tril.rst
    creation/triu.rst
    creation/empty.rst
+   creation/array.rst
 
