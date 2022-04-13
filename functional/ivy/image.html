@@ -24,6 +24,7 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -80,12 +81,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Guides</span></p>
+              <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../why_ivy.html">Why Ivy?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../using_ivy.html">Using Ivy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../training_a_network.html">Training a Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing to Ivy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Functional</span></p>
 <ul class="current">
@@ -105,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="image/float_img_to_uint8_img.html">float_img_to_uint8_img</a></li>
 <li class="toctree-l2"><a class="reference internal" href="image/uint8_img_to_float_img.html">uint8_img_to_float_img</a></li>
 <li class="toctree-l2"><a class="reference internal" href="image/random_crop.html">random_crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image/linear_resample.html">linear_resample</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="layers.html">Layers</a></li>
@@ -258,6 +261,24 @@
 </dd></dl>
 
 <dl class="py function">
+<dt id="ivy.functional.ivy.image.linear_resample">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">linear_resample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">axis</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/image.html#linear_resample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.image.linear_resample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs linear re-sampling on input image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array</em>) – Input array</p></li>
+<li><p><strong>num_samples</strong> (<em>int</em>) – The number of interpolated samples to take.</p></li>
+<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis along which to perform the resample. Default is last dimension.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The array after the linear resampling.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="ivy.functional.ivy.image.random_crop">
 <code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">random_crop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">crop_size</span></em>, <em class="sig-param"><span class="n">batch_shape</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image_dims</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/image.html#random_crop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.image.random_crop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Randomly crops the input images.</p>
@@ -308,15 +329,6 @@
 </dd></dl>
 
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Image</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="image/stack_images.html">stack_images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image/bilinear_resample.html">bilinear_resample</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image/gradient_image.html">gradient_image</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image/float_img_to_uint8_img.html">float_img_to_uint8_img</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image/uint8_img_to_float_img.html">uint8_img_to_float_img</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image/random_crop.html">random_crop</a></li>
-</ul>
 </div>
 </div>
 

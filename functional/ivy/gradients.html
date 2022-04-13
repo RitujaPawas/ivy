@@ -24,6 +24,7 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -36,7 +37,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="with_grads" href="gradients/with_grads.html" />
-    <link rel="prev" title="copy_array" href="general/copy_array.html" /> 
+    <link rel="prev" title="get_num_dims" href="general/get_num_dims.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -80,12 +81,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Guides</span></p>
+              <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../why_ivy.html">Why Ivy?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../using_ivy.html">Using Ivy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../training_a_network.html">Training a Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing to Ivy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Functional</span></p>
 <ul class="current">
@@ -458,7 +460,7 @@ otherwise an array is always returned. Default is True.</p></li>
 
 <dl class="py function">
 <dt id="ivy.functional.ivy.gradients.variable">
-<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/gradients.html#variable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.gradients.variable" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; ivy.array.Variable<a class="reference internal" href="../../_modules/ivy/functional/ivy/gradients.html#variable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.gradients.variable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a variable, which supports gradient computation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -492,23 +494,6 @@ array. For frameworks which do not have a dedicated variable class, the function
 </dd></dl>
 
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Gradients</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="gradients/with_grads.html">with_grads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/set_with_grads.html">set_with_grads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/unset_with_grads.html">unset_with_grads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/variable.html">variable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/is_variable.html">is_variable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/variable_data.html">variable_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/stop_gradient.html">stop_gradient</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/execute_with_gradients.html">execute_with_gradients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/adam_step.html">adam_step</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/optimizer_update.html">optimizer_update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/gradient_descent_update.html">gradient_descent_update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/lars_update.html">lars_update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/adam_update.html">adam_update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradients/lamb_update.html">lamb_update</a></li>
-</ul>
 </div>
 </div>
 
@@ -523,7 +508,7 @@ array. For frameworks which do not have a dedicated variable class, the function
         <a href="gradients/with_grads.html" class="btn btn-neutral float-right" title="with_grads" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="general/copy_array.html" class="btn btn-neutral float-left" title="copy_array" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="general/get_num_dims.html" class="btn btn-neutral float-left" title="get_num_dims" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
