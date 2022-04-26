@@ -264,9 +264,16 @@ floating-point data type. Default: None.</p>
 <dt>device</dt><dd><p>device on which to place the created array. Default: None.</p>
 </dd>
 <dt>Returns</dt><dd></dd>
-<dt>ret</dt><dd><p>an uninitialized array having a specified shape</p>
+<dt>ret</dt><dd><p>an uninitialized array having a specified shape.</p>
 </dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">ivy.array([[ -9.74499359e+001,   6.69583040e-309],</span>
+<span class="go">   [  2.13182611e-314,   3.06959433e-309]])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <div class="line-block">
