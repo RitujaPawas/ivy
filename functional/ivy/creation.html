@@ -146,7 +146,8 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.arange">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">arange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#arange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.arange" title="Permalink to this definition"></a></dt>
-<dd><p>Returns evenly spaced values within a given interval, with the spacing being specified.</p>
+<dd><p>Returns evenly spaced values within a given interval, with the spacing
+being specified.</p>
 <p>Values are generated within the half-open interval [start, stop) (in other words, the interval including start but
 excluding stop). For integer arguments the function is equivalent to the Python built-in range function,
 but returns an array in the chosen ml_framework rather than a list.</p>
@@ -227,18 +228,17 @@ floating-point data type. Default: None.</p></li>
 <li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>]) – device on which to place the created array. Default: None. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 <li><p><strong>Returns</strong> – </p></li>
 <li><p><strong>ret</strong> – an uninitialized array having a specified shape.</p></li>
-<li><p><strong>Examples</strong> – </p></li>
-<li><p><strong>---------</strong> – </p></li>
-<li><p><strong>[</strong><strong>2</strong> (<em>&gt;&gt;&gt; shape =</em>) – </p></li>
-<li><p><strong>2</strong><strong>]</strong> – </p></li>
-<li><p><strong>ivy.empty</strong><strong>(</strong><strong>shape</strong><strong>)</strong> (<em>&gt;&gt;&gt; y =</em>) – </p></li>
-<li><p><strong>print</strong><strong>(</strong><strong>y</strong><strong>)</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
-<li><p><strong>-9.74499359e+001</strong> (<em>ivy.array</em><em>(</em><em>[</em><em>[</em>) – [  2.13182611e-314,   3.06959433e-309]])</p></li>
-<li><p><strong>6.69583040e-309</strong><strong>]</strong> – [  2.13182611e-314,   3.06959433e-309]])</p></li>
 </ul>
 </dd>
 </dl>
-<p>:param : [  2.13182611e-314,   3.06959433e-309]])</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">ivy.array([[ -9.74499359e+001,   6.69583040e-309],</span>
+<span class="go">   [  2.13182611e-314,   3.06959433e-309]])</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
@@ -258,23 +258,17 @@ floating-point data type. Default: None.</p></li>
 <li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – device on which to place the created array. If device is None, the output array device must be inferred from x. Default: None. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 <li><p><strong>Returns</strong> – </p></li>
 <li><p><strong>ret</strong> – an array having the same shape as x and containing uninitialized data.</p></li>
-<li><p><strong>Examples</strong> – </p></li>
-<li><p><strong>---------</strong> – </p></li>
-<li><p><strong>ivy.array</strong><strong>(</strong><strong>[</strong><strong>[</strong><strong>1</strong> (<em>&gt;&gt;&gt; x =</em>) – </p></li>
-<li><p><strong>2</strong> – </p></li>
-<li><p><strong>3</strong><strong>]</strong> – </p></li>
-<li><p><strong>[</strong><strong>4</strong> – </p></li>
-<li><p><strong>5</strong> – </p></li>
-<li><p><strong>6</strong><strong>]</strong><strong>]</strong><strong>)</strong> – </p></li>
-<li><p><strong>ivy.empty_like</strong><strong>(</strong><strong>x</strong><strong>)</strong> (<em>&gt;&gt;&gt; y =</em>) – </p></li>
-<li><p><strong>print</strong><strong>(</strong><strong>y</strong><strong>)</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
-<li><p><strong>ivy.array</strong><strong>(</strong><strong>[</strong><strong>[</strong><strong>-1073741821</strong> – [          0,           0, -1073741821]])</p></li>
-<li><p><strong>-1073741821</strong> – [          0,           0, -1073741821]])</p></li>
-<li><p><strong>3</strong><strong>]</strong> – [          0,           0, -1073741821]])</p></li>
 </ul>
 </dd>
 </dl>
-<p>:param : [          0,           0, -1073741821]])</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">ivy.array([[-1073741821, -1073741821,          3],</span>
+<span class="go">   [          0,           0, -1073741821]])</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
@@ -285,7 +279,8 @@ floating-point data type. Default: None.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.eye">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">eye</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#eye"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.eye" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a two-dimensional array with ones on the k h diagonal and zeros elsewhere.</p>
+<dd><p>Returns a two-dimensional array with ones on the k h diagonal and zeros
+elsewhere.</p>
 <p>Parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -311,7 +306,8 @@ point data type. Default: None.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.from_dlpack">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">from_dlpack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#from_dlpack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.from_dlpack" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a new array containing the data from another (array) object with a <code class="docutils literal notranslate"><span class="pre">__dlpack__</span></code> method.</p>
+<dd><p>Returns a new array containing the data from another (array) object with
+a <code class="docutils literal notranslate"><span class="pre">__dlpack__</span></code> method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -334,7 +330,8 @@ point data type. Default: None.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.full">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.full" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a new array having a specified <code class="docutils literal notranslate"><span class="pre">shape</span></code> and filled with <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>.</p>
+<dd><p>Returns a new array having a specified <code class="docutils literal notranslate"><span class="pre">shape</span></code> and filled with
+<code class="docutils literal notranslate"><span class="pre">fill_value</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -365,7 +362,8 @@ point data type. Default: None.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.full_like">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">full_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#full_like"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.full_like" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a new array filled with <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> and having the same <code class="docutils literal notranslate"><span class="pre">shape</span></code> as an input array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<dd><p>Returns a new array filled with <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> and having the same
+<code class="docutils literal notranslate"><span class="pre">shape</span></code> as an input array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -396,8 +394,9 @@ Default: <code class="docutils literal notranslate"><span class="pre">None</span
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.linspace">
-<span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">linspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#linspace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.linspace" title="Permalink to this definition"></a></dt>
-<dd><p>Generates a certain number of evenly-spaced values in an interval along a given axis.</p>
+<span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">linspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#linspace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.linspace" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a certain number of evenly-spaced values in an interval along
+a given axis.</p>
 <p>See <span class="math notranslate nohighlight">\(arange\)</span> that allows to specify the step size of evenly spaced values in an interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -420,7 +419,8 @@ Default: <code class="docutils literal notranslate"><span class="pre">None</span
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.logspace">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">logspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#logspace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.logspace" title="Permalink to this definition"></a></dt>
-<dd><p>Generates a certain number of evenly-spaced values in log space, in an interval along a given axis.</p>
+<dd><p>Generates a certain number of evenly-spaced values in log space, in an
+interval along a given axis.</p>
 <p>See <span class="math notranslate nohighlight">\(arange\)</span> that allows to specify the step size of evenly spaced values in an interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -501,7 +501,8 @@ Each returned array should have the same data type as the input arrays.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.ones_like">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">ones_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#ones_like"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.ones_like" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a new array filled with ones and having the same shape as an input array x.</p>
+<dd><p>Returns a new array filled with ones and having the same shape as an
+input array x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -539,7 +540,8 @@ Default: <code class="docutils literal notranslate"><span class="pre">None</span
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.tril">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">tril</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#tril"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.tril" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the lower triangular part of a matrix (or a stack of matrices) x.</p>
+<dd><p>Returns the lower triangular part of a matrix (or a stack of matrices)
+x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -550,41 +552,20 @@ below the main diagonal. If k &gt; 0, the diagonal is above the main diagonal. D
 <li><p><strong>ret</strong> – an array containing the lower triangular part(s). The returned array must have the same shape and data type as
 x. All elements above the specified diagonal k must be zeroed. The returned array should be allocated on the
 same device as x.</p></li>
-<li><p><strong>Examples</strong> – </p></li>
-<li><p><strong>---------</strong> – </p></li>
-<li><p><strong>ivy.array</strong><strong>(</strong><strong>[</strong><strong>[</strong><strong>1</strong> (<em>&gt;&gt;&gt; x =</em>) – </p></li>
-<li><p><strong>2</strong> – </p></li>
-<li><p><strong>3</strong><strong>]</strong> – </p></li>
-<li><p><strong>[</strong><strong>4</strong> – </p></li>
-<li><p><strong>5</strong> – </p></li>
-<li><p><strong>6</strong><strong>]</strong> – </p></li>
-<li><p><strong>[</strong><strong>7</strong> – </p></li>
-<li><p><strong>8</strong> – </p></li>
-<li><p><strong>9</strong><strong>]</strong> – </p></li>
-<li><p><strong>[</strong><strong>10</strong> – </p></li>
-<li><p><strong>11</strong> – </p></li>
-<li><p><strong>12</strong><strong>]</strong><strong>]</strong><strong>)</strong> – </p></li>
-<li><p><strong>-1</strong> (<em>&gt;&gt;&gt; k =</em>) – </p></li>
-<li><p><strong>ivy.tril</strong><strong>(</strong><strong>x</strong> (<em>&gt;&gt;&gt; y =</em>) – </p></li>
-<li><p><strong>k</strong><strong>)</strong> – </p></li>
-<li><p><strong>print</strong><strong>(</strong><strong>y</strong><strong>)</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
-<li><p><strong>0</strong> (<em>ivy.array</em><em>(</em><em>[</em><em>[</em>) – [ 4,  0,  0],
-[ 7,  8,  0],
-[10, 11, 12]])</p></li>
-<li><p><strong>0</strong> – [ 4,  0,  0],
-[ 7,  8,  0],
-[10, 11, 12]])</p></li>
-<li><p><strong>0</strong><strong>]</strong> – [ 4,  0,  0],
-[ 7,  8,  0],
-[10, 11, 12]])</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="simple">
-<dt>:param<span class="classifier">[ 4,  0,  0],</span></dt><dd><p>[ 7,  8,  0],
-[10, 11, 12]])</p>
-</dd>
-</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tril</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">ivy.array([[ 0,  0,  0],</span>
+<span class="go">   [ 4,  0,  0],</span>
+<span class="go">   [ 7,  8,  0],</span>
+<span class="go">   [10, 11, 12]])</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
@@ -595,7 +576,8 @@ same device as x.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.triu">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">triu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#triu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.triu" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the upper triangular part of a matrix (or a stack of matrices) x.</p>
+<dd><p>Returns the upper triangular part of a matrix (or a stack of matrices)
+x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -606,41 +588,20 @@ below the main diagonal. If k &gt; 0, the diagonal is above the main diagonal. D
 <li><p><strong>ret</strong> – an array containing the upper triangular part(s). The returned array must have the same shape and data type as
 x. All elements below the specified diagonal k must be zeroed. The returned array should be allocated on the
 same device as x.</p></li>
-<li><p><strong>Examples</strong> – </p></li>
-<li><p><strong>---------</strong> – </p></li>
-<li><p><strong>ivy.array</strong><strong>(</strong><strong>[</strong><strong>[</strong><strong>1</strong> (<em>&gt;&gt;&gt; x =</em>) – </p></li>
-<li><p><strong>2</strong> – </p></li>
-<li><p><strong>3</strong><strong>]</strong> – </p></li>
-<li><p><strong>[</strong><strong>4</strong> – </p></li>
-<li><p><strong>5</strong> – </p></li>
-<li><p><strong>6</strong><strong>]</strong> – </p></li>
-<li><p><strong>[</strong><strong>7</strong> – </p></li>
-<li><p><strong>8</strong> – </p></li>
-<li><p><strong>9</strong><strong>]</strong> – </p></li>
-<li><p><strong>[</strong><strong>10</strong> – </p></li>
-<li><p><strong>11</strong> – </p></li>
-<li><p><strong>12</strong><strong>]</strong><strong>]</strong><strong>)</strong> – </p></li>
-<li><p><strong>-1</strong> (<em>&gt;&gt;&gt; k =</em>) – </p></li>
-<li><p><strong>ivy.triu</strong><strong>(</strong><strong>x</strong> (<em>&gt;&gt;&gt; y =</em>) – </p></li>
-<li><p><strong>k</strong><strong>)</strong> – </p></li>
-<li><p><strong>print</strong><strong>(</strong><strong>y</strong><strong>)</strong> (<em>&gt;&gt;&gt;</em>) – </p></li>
-<li><p><strong>1</strong> (<em>ivy.array</em><em>(</em><em>[</em><em>[</em>) – [ 4,  5,  6],
-[ 0,  8,  9],
-[ 0,  0, 12]])</p></li>
-<li><p><strong>2</strong> – [ 4,  5,  6],
-[ 0,  8,  9],
-[ 0,  0, 12]])</p></li>
-<li><p><strong>3</strong><strong>]</strong> – [ 4,  5,  6],
-[ 0,  8,  9],
-[ 0,  0, 12]])</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="simple">
-<dt>:param<span class="classifier">[ 4,  5,  6],</span></dt><dd><p>[ 0,  8,  9],
-[ 0,  0, 12]])</p>
-</dd>
-</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">ivy.array([[ 1,  2,  3],</span>
+<span class="go">   [ 4,  5,  6],</span>
+<span class="go">   [ 0,  8,  9],</span>
+<span class="go">   [ 0,  0, 12]])</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
@@ -693,7 +654,8 @@ same device as x.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.creation.zeros_like">
 <span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.creation.</span></span><span class="sig-name descname"><span class="pre">zeros_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/creation.html#zeros_like"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.creation.zeros_like" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a new array filled with zeros and having the same <code class="docutils literal notranslate"><span class="pre">shape</span></code> as an input array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<dd><p>Returns a new array filled with zeros and having the same <code class="docutils literal notranslate"><span class="pre">shape</span></code> as
+an input array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
