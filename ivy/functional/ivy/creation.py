@@ -272,14 +272,10 @@ def tril(x: Union[ivy.Array, ivy.NativeArray], k: int = 0) -> ivy.Array:
         x. All elements above the specified diagonal k must be zeroed. The returned array should be allocated on the
         same device as x.
 
-<<<<<<< HEAD
-    Examples:
-    ---------
-=======
+
     Examples
     --------
-    
->>>>>>> 74c5e273ff72196250d51a00b85d633e20f473ae
+
     >>> x = ivy.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
     >>> k = -1
     >>> y = ivy.tril(x, k)
@@ -312,14 +308,9 @@ def triu(x: Union[ivy.Array, ivy.NativeArray], k: int = 0) -> ivy.Array:
         x. All elements below the specified diagonal k must be zeroed. The returned array should be allocated on the
         same device as x.
 
-<<<<<<< HEAD
-    Examples:
-    ---------
-=======
-
     Examples
     --------
->>>>>>> 74c5e273ff72196250d51a00b85d633e20f473ae
+
     >>> x = ivy.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
     >>> k = -1
     >>> y = ivy.triu(x, k)
