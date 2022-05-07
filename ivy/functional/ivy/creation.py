@@ -272,8 +272,14 @@ def tril(x: Union[ivy.Array, ivy.NativeArray], k: int = 0) -> ivy.Array:
         x. All elements above the specified diagonal k must be zeroed. The returned array should be allocated on the
         same device as x.
 
+<<<<<<< HEAD
     Examples:
     ---------
+=======
+    Examples
+    --------
+    
+>>>>>>> 74c5e273ff72196250d51a00b85d633e20f473ae
     >>> x = ivy.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
     >>> k = -1
     >>> y = ivy.tril(x, k)
@@ -306,8 +312,14 @@ def triu(x: Union[ivy.Array, ivy.NativeArray], k: int = 0) -> ivy.Array:
         x. All elements below the specified diagonal k must be zeroed. The returned array should be allocated on the
         same device as x.
 
+<<<<<<< HEAD
     Examples:
     ---------
+=======
+
+    Examples
+    --------
+>>>>>>> 74c5e273ff72196250d51a00b85d633e20f473ae
     >>> x = ivy.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
     >>> k = -1
     >>> y = ivy.triu(x, k)
@@ -343,13 +355,15 @@ def empty(
     ret
         an uninitialized array having a specified shape.
 
-    Examples:
-    ---------
+    Examples
+    --------
+    
     >>> shape = [2, 2]
     >>> y = ivy.empty(shape)
     >>> print(y)
     ivy.array([[ -9.74499359e+001,   6.69583040e-309],
        [  2.13182611e-314,   3.06959433e-309]])
+    
     """
     return _cur_framework().empty(shape, dtype, device)
 
@@ -375,13 +389,15 @@ def empty_like(
     ret
         an array having the same shape as x and containing uninitialized data.
 
-    Examples:
-    ---------
+    Examples
+    --------
+    
     >>> x = ivy.array([[1,2,3], [4,5,6]])
     >>> y = ivy.empty_like(x)
     >>> print(y)
     ivy.array([[-1073741821, -1073741821,          3],
        [          0,           0, -1073741821]])
+    
     """
     return _cur_framework(x).empty_like(x, dtype, device)
 
