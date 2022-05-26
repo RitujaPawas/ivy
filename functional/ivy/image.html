@@ -190,11 +190,15 @@ be saved to disk.</p>
 <span class="go">ivy.array([[0., 1., 2.],</span>
 <span class="go">           [3., 4., 5.],</span>
 <span class="go">           [6., 7., 8.]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,:,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,:,</span><span class="mi">0</span><span class="p">])</span>
 <span class="go"> ivy.array([[3., 3., 3.],</span>
 <span class="go">           [3., 3., 3.],</span>
 <span class="go">           [0., 0., 0.]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,:,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,:,</span><span class="mi">0</span><span class="p">])</span>
 <span class="go"> ivy.array([[1., 1., 0.],</span>
 <span class="go">           [1., 1., 0.],</span>
 <span class="go">           [1., 1., 0.]])</span>
@@ -225,7 +229,7 @@ be saved to disk.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.image.random_crop">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">random_crop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/image.html#random_crop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.image.random_crop" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">random_crop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/image.html#random_crop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.image.random_crop" title="Permalink to this definition"></a></dt>
 <dd><p>Randomly crops the input images.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -267,20 +271,16 @@ aspect ratio as closely as possible.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">)]</span> <span class="o">*</span> <span class="n">num</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stacked</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">stack_images</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">stacked</span><span class="p">)</span>
-<span class="go">[[[1., 1., 1.],</span>
+<span class="go">ivy.array([[[1., 1., 1.],</span>
 <span class="go">        [1., 1., 1.],</span>
 <span class="go">        [0., 0., 0.],</span>
 <span class="go">        [0., 0., 0.]],</span>
+<span class="go">       [[1., 1., 1.],</span>
+<span class="go">        [1., 1., 1.],</span>
+<span class="go">        [0., 0., 0.],</span>
+<span class="go">        [0., 0., 0.]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><dl class="simple">
-<dt>[[1., 1., 1.],</dt><dd><p>[1., 1., 1.],
-[0., 0., 0.],
-[0., 0., 0.]]]</p>
-</dd>
-</dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py function">
