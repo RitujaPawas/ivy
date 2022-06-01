@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -64,7 +65,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../building_the_docs.html">Building the Docs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
@@ -142,7 +142,7 @@
            <div itemprop="articleBody">
              
   <section id="function-wrapping">
-<h1>Function Wrapping<a class="headerlink" href="#function-wrapping" title="Permalink to this headline"></a></h1>
+<h1>Function Wrapping<a class="headerlink" href="#function-wrapping" title="Permalink to this heading"></a></h1>
 <p>When a backend framework is set by calling <code class="code docutils literal notranslate"><span class="pre">ivy.set_backend(backend_name)</span></code>,
 then all Ivy functions are <a class="reference external" href="https://github.com/unifyai/ivy/blob/0f131178be50ea08ec818c73078e6e4c88948ab3/ivy/framework_handler.py#L206">wrapped</a>. This is achieved by calling <a class="reference external" href="https://github.com/unifyai/ivy/blob/0f131178be50ea08ec818c73078e6e4c88948ab3/ivy/func_wrapper.py#L341">_wrap_or_unwrap_functions</a>,
 with <code class="code docutils literal notranslate"><span class="pre">_wrap_function</span></code> as an argument.
