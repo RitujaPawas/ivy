@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>randint &mdash; Ivy 1.0 documentation</title>
+  <title>nested_multi_map &mdash; Ivy 1.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="seed" href="seed.html" />
-    <link rel="prev" title="multinomial" href="multinomial.html" /> 
+    <link rel="next" title="Norms" href="../norms.html" />
+    <link rel="prev" title="copy_nest" href="copy_nest.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -65,17 +65,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../losses.html">Losses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manipulation.html">Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../meta.html">Meta</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nest.html">Nest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../norms.html">Norms</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../random.html">Random</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="random_uniform.html">random_uniform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random_normal.html">random_normal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multinomial.html">multinomial</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">randint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seed.html">seed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shuffle.html">shuffle</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../nest.html">Nest</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index_nest.html">index_nest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prune_nest_at_index.html">prune_nest_at_index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set_nest_at_index.html">set_nest_at_index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insert_into_nest_at_index.html">insert_into_nest_at_index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_nest_at_index.html">map_nest_at_index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi_index_nest.html">multi_index_nest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prune_nest_at_indices.html">prune_nest_at_indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set_nest_at_indices.html">set_nest_at_indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insert_into_nest_at_indices.html">insert_into_nest_at_indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_nest_at_indices.html">map_nest_at_indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nested_indices_where.html">nested_indices_where</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_nested_indices.html">all_nested_indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nested_map.html">nested_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nested_any.html">nested_any</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copy_nest.html">copy_nest</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">nested_multi_map</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../random.html">Random</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../searching.html">Searching</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../set.html">Set</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sorting.html">Sorting</a></li>
@@ -120,10 +131,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-                    <li><a href="../random.html">Random</a> &raquo;</li>
-      <li>randint</li>
+                    <li><a href="../nest.html">Nest</a> &raquo;</li>
+      <li>nested_multi_map</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/functional/ivy/random/randint.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/functional/ivy/nest/nested_multi_map.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -131,63 +142,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="randint">
-<h1>randint<a class="headerlink" href="#randint" title="Permalink to this heading"></a></h1>
+  <section id="nested-multi-map">
+<h1>nested_multi_map<a class="headerlink" href="#nested-multi-map" title="Permalink to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="ivy.functional.ivy.random.randint">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">randint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/random.html#randint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.random.randint" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an array filled with random integers generated uniformly between
-low (inclusive) and high (exclusive).</p>
+<dt class="sig sig-object py" id="ivy.functional.ivy.nest.nested_multi_map">
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">nested_multi_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nests</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/nest.html#nested_multi_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.nest.nested_multi_map" title="Permalink to this definition"></a></dt>
+<dd><p>Apply function to all array values from a collection of identically
+structured ivy arrays.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>low</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Lowest integer to be drawn from the distribution.</p></li>
-<li><p><strong>high</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – One above the highest integer to be drawn from the distribution.</p></li>
-<li><p><strong>shape</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>]]) – a tuple defining the shape of the output array.</p></li>
-<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDevice</span></code>]]) – device on which to create the array ‘cuda:0’, (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
-‘cuda:1’, ‘cpu’ etc. (Default value = None).</p></li>
+<li><p><strong>func</strong> – Function to apply to each nest entry.</p></li>
+<li><p><strong>nest</strong> – nests to map.</p></li>
+<li><p><strong>key_chains</strong> – The key-chains to apply or not apply the method to. Default is None.</p></li>
+<li><p><strong>to_apply</strong> – If True, the method will be applied to key_chains, otherwise key_chains will
+be skipped. Default is True.</p></li>
+<li><p><strong>prune_unapplied</strong> – Whether to prune key_chains for which the function was not applied,
+otherwise the leftmost nest value is used. Default is False.</p></li>
+<li><p><strong>key_chain</strong> – Chain of keys for this dict entry (Default value = ‘’)</p></li>
+<li><p><strong>config</strong> – The configuration for the nests. Default is the same as nest0.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>&lt;module ‘ivy.array’ from ‘/home/root/project/ivy/array/__init__.py’&gt;</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ret</em> – Returns an array with the given shape filled with integers from
-the uniform distribution in the “half-open” interval [low, high)</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>nest containing the result of the funciton.</em></p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">ivy.array([3])</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">ivy.array([2, 6, 7])</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">ivy.array([[ 7,  5],</span>
-<span class="go">   [16,  5],</span>
-<span class="go">   [15, 15]])</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">ivy.array([[13,  5, 12],</span>
-<span class="go">   [10,  9, 13],</span>
-<span class="go">   [ 6, 14, 11]])</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;gpu:1&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">ivy.array([[ 7,  7,  5],</span>
-<span class="go">   [12,  8,  8],</span>
-<span class="go">   [ 8, 11,  3]])</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <div class="line-block">
@@ -201,8 +180,8 @@ the uniform distribution in the “half-open” interval [low, high)</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="multinomial.html" class="btn btn-neutral float-left" title="multinomial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="seed.html" class="btn btn-neutral float-right" title="seed" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="copy_nest.html" class="btn btn-neutral float-left" title="copy_nest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../norms.html" class="btn btn-neutral float-right" title="Norms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
